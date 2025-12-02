@@ -1,0 +1,246 @@
+<!--
+Exercici per a Llenguatge de Marques (inspirat en CSS Zen Garden):
+1) L’alumnat rep aquest mateix HTML (index.html) sense cap estil.
+2) Han de crear un «style.css» per donar-li presentació. 
+3) A continuació tens 2 propostes CSS d’exemple: «style-festiu.css» (divertit) i «style-terror.css» (por). 
+   Per provar-les, canvia l’enllaç <link rel="stylesheet" href="style.css"> per cadascun dels arxius.
+-->
+
+<!-- =====================
+       index.html
+===================== -->
+<!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nadal Zombie · Full d'estil únic</title>
+  <meta name="description" content="Exercici tipus CSS Zen Garden: mateix HTML, estils diferents. Tema: partida de rol Nadal Zombie." />
+  <link rel="stylesheet" href="styleRoger.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Salta al contingut</a>
+
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <h1>Nadal <span class="mark">Zombie</span></h1>
+      <p class="tagline">Partida de rol en un poble nevat… i infestat</p>
+    </div>
+    <nav aria-label="Seccions principals" class="main-nav">
+      <ul>
+        <li><a href="#introduccio">Introducció</a></li>
+        <li><a href="#missio">Missió & Regles</a></li>
+        <li><a href="#personatges">Personatges</a></li>
+        <li><a href="#inventari">Inventari</a></li>
+        <li><a href="#mapa">Mapa</a></li>
+        <li><a href="#cronologia">Cronologia</a></li>
+        <li><a href="#taula-risc">Taula de risc</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#credits">Crèdits</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <main id="main" class="content" role="main">
+
+      <section id="introduccio" aria-labelledby="t-intro">
+        <h2 id="t-intro">Introducció</h2>
+        <p>És <strong>Vigília de Nadal</strong> a <em>Vila Roure</em>. La neu cau silenciosa, els llums parpellegen als balcons i a la plaça ressona un <cite>Jingle Bells</cite> lleugerament desafinat. De sobte, el silenci es trenca: un <abbr title="Objecte Volador No Identificat">OVNI</abbr>? No. Un <strong>gemec</strong>. Des de darrere del pessebre vivent s’alcen figures amb ulls buits… <strong>zombis</strong>.</p>
+        <p>Heu estat convocats pel consistori: cal protegir la ciutadania, recuperar els <q>Regals Sagrats</q> de l’arbre municipal i descobrir d’on surt l’epidèmia. El rellotge marca les <time datetime="23:00">23:00</time>. A les <time datetime="00:00">00:00</time> la infecció esdevindrà <strong>irreversible</strong>.</p>
+      </section>
+
+      <section id="missio" aria-labelledby="t-missio">
+        <h2 id="t-missio">Missió & Regles</h2>
+        <ol>
+          <li>Recupereu els <strong>3 Regals Sagrats</strong> (Estrella, Trineu, Campana).</li>
+          <li>Localitzeu l’<strong>origen de la infecció</strong> (algun punt del mapa).</li>
+          <li>Evacueu com a mínim <strong>6 veïns</strong> cap a la rectoria.</li>
+        </ol>
+        <h3>Regles de la sessió</h3>
+        <ul>
+          <li>Iniciativa: d20 + Agilitat. Desempats per <em>Esperit Nadalenc</em>.</li>
+          <li>Crític: 20 natural → +1 regal extra trobat; Pifia: 1 natural → soroll que atreu zombis.</li>
+          <li>La neu redueix el moviment a la meitat fora de camins.</li>
+          <li>Els <strong>cloïsters</strong> de la rectoria bloquegen zombis durant 1 torn.</li>
+        </ul>
+      </section>
+
+      <section id="personatges" aria-labelledby="t-personatges">
+        <h2 id="t-personatges">Full de Personatges</h2>
+        <p>Personatges pregenerats per començar en 5 minuts.</p>
+        <table>
+          <caption>Taula de personatges jugables</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nom</th>
+              <th scope="col">Classe</th>
+              <th scope="col">Habilitat</th>
+              <th scope="col">Estat</th>
+              <th scope="col">PV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rita Llums</td>
+              <td>Electricista</td>
+              <td><code>CurtoCircuit</code> (aturar il·luminació per despistar)</td>
+              <td>Sana</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Bernat Trineu</td>
+              <td>Carter municipal</td>
+              <td><code>RutaSegura</code> (coneix dreceres entre carrers)</td>
+              <td>Ferit lleu</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Núria Coral</td>
+              <td>Directora de cor</td>
+              <td><code>CantHipnòtic</code> (retarda 1 torn d’un grup zombi)</td>
+              <td>Sana</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Abel Fum</td>
+              <td>Fogueraire</td>
+              <td><code>Torxa</code> (+2 contra zombis gelats)</td>
+              <td>Exhaust</td>
+              <td>8</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="inventari" aria-labelledby="t-inventari">
+        <h2 id="t-inventari">Inventari & Objectes</h2>
+        <ul>
+          <li><strong>Estrella del Campanar</strong>: revela el camí cap a l’origen.</li>
+          <li><strong>Campana Major</strong>: toca-la per dissoldre una horda (1 cop).</li>
+          <li><strong>Trineu Municipal</strong>: permet evacuar fins a 3 <em>PNJ</em> per viatge.
+            <ul>
+              <li>Accessoris: mantes tèrmiques, cordes, far.</li>
+            </ul>
+          </li>
+          <li><strong>Galetes de gingebre</strong>: +1 PV en menjar-ne (1 ús).</li>
+        </ul>
+      </section>
+
+      <section id="mapa" aria-labelledby="t-mapa">
+        <h2 id="t-mapa">Mapa de Vila Roure</h2>
+        <figure>
+          <img src="img/mapa-vila-roure.png" alt="Mapa de Vila Roure amb les zones de la plaça, la rectoria, l’escola, el mercat i el riu" class="mapa">
+          <figcaption>Zones clau: <mark>Plaça</mark>, <mark>Rectoria</mark>, <mark>Escola</mark>, <mark>Mercat</mark>, <mark>Riu</mark>.</figcaption>
+        </figure>
+      </section>
+
+      <section id="cronologia" aria-labelledby="t-crono">
+        <h2 id="t-crono">Cronologia dels fets</h2>
+        <ol>
+          <li><time datetime="22:30">22:30</time> – Apagada parcial a la plaça.</li>
+          <li><time datetime="22:45">22:45</time> – Primer avís de <em>veïns</em> desapareguts.</li>
+          <li><time datetime="23:10">23:10</time> – Aparició d’horda prop del mercat.</li>
+          <li><time datetime="23:40">23:40</time> – El riu comença a glaçar-se: pas alternatiu.</li>
+          <li><time datetime="00:00">00:00</time> – Punt de no retorn si no s’han recuperat els Regals.</li>
+        </ol>
+      </section>
+
+      <section id="taula-risc" aria-labelledby="t-risc">
+        <h2 id="t-risc">Taula de risc per zona</h2>
+        <table>
+          <caption>Probabilitat d’encontre per ubicació (1d6 cada 10’)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Ubicació</th>
+              <th scope="col">1-2</th>
+              <th scope="col">3-4</th>
+              <th scope="col">5</th>
+              <th scope="col">6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Plaça</th>
+              <td>Res</td>
+              <td>2 zombis</td>
+              <td>4 zombis</td>
+              <td>Mini-horda</td>
+            </tr>
+            <tr>
+              <th scope="row">Escola</th>
+              <td>Res</td>
+              <td>1 zombi</td>
+              <td>2 zombis</td>
+              <td>Trampa de joguines</td>
+            </tr>
+            <tr>
+              <th scope="row">Mercat</th>
+              <td>Res</td>
+              <td>2 zombis</td>
+              <td>3 zombis</td>
+              <td>Boss local</td>
+            </tr>
+            <tr>
+              <th scope="row">Rectoria</th>
+              <td>Res</td>
+              <td>1 zombi</td>
+              <td>Porta bloquejada</td>
+              <td>Santuari actiu</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="pistes" aria-labelledby="t-pistes">
+        <h2 id="t-pistes">Pistes</h2>
+        <blockquote>
+          <p>“Quan la <strong>Campana</strong> canti, el gel es farà camí.”</p>
+          <cite>— Inscripció sota l’arbre de Nadal</cite>
+        </blockquote>
+      </section>
+
+      <section id="faq" aria-labelledby="t-faq">
+        <h2 id="t-faq">Preguntes freqüents</h2>
+        <details>
+          <summary>Podem negociar amb els zombis?</summary>
+          <p>No. Però pots <em>distrure’ls</em> amb cançons, llum o foc.</p>
+        </details>
+        <details>
+          <summary>Què passa si cau més neu?</summary>
+          <p>La visibilitat baixa (−1 a tirades de percepció) i el moviment fora de camins es redueix a 1/3.</p>
+        </details>
+      </section>
+
+      <section id="credits" aria-labelledby="t-credits">
+        <h2 id="t-credits">Crèdits & Llicència</h2>
+        <p>HTML creat per a exercici docent (inspirat en CSS Zen Garden). Pots reutilitzar-lo a classe citant-ne l’origen.</p>
+        <address>Institut Pla de l’Estany · Banyoles</address>
+      </section>
+
+    </main>
+
+    <aside class="sidebar" aria-label="Informació de la sessió">
+      <h2>Fitxa de sessió</h2>
+      <ul>
+        <li>Director/a de joc: <strong>Prof.</strong></li>
+        <li>Jugadors: 3–5</li>
+        <li>Dificultat: <strong>Mitjana</strong></li>
+        <li>Durada: 90–120 min</li>
+        <li>Recomanat: +12</li>
+      </ul>
+      <h3>Consells</h3>
+      <p>Distribueix els torns amb música ambiental i usa la <em>taula de risc</em> cada 10 minuts de joc.</p>
+    </aside>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; <span id="any">2025</span> · Nadal Zombie</p>
+  </footer>
+
+  <script>
+    // Accessibilitat: actualitza l'any automàticament
+    document.getElementById('any').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
